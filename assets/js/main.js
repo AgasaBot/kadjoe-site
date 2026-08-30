@@ -48,10 +48,10 @@
         e.target.classList.add('in'); io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.01, rootMargin: '0px 0px -5% 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 16% 0px' });
   rvEls.forEach(function (el) { io.observe(el); });
   function sweep() {
-    var line = window.innerHeight * 0.96;
+    var line = window.innerHeight * 1.14;
     rvEls = rvEls.filter(function (el) {
       if (el.classList.contains('in')) return false;
       if (el.getBoundingClientRect().top < line) { el.classList.add('in'); io.unobserve(el); return false; }
@@ -62,6 +62,18 @@
   window.addEventListener('resize', sweep, { passive: true });
   setTimeout(sweep, 60);
   setTimeout(sweep, 600);
+
+  /* cross-page anchor jumps: re-assert the target position after load settles */
+  function anchorFix() {
+    var h = (location.hash || '').slice(1);
+    if (!h) return;
+    var t = document.getElementById(h);
+    if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' });
+  }
+  if (location.hash) {
+    setTimeout(anchorFix, 80);
+    window.addEventListener('load', function () { setTimeout(anchorFix, 300); });
+  }
 
   /* hero slideshow — slides beyond the first hydrate from data-src after first paint */
   var slides = document.querySelectorAll('.hero-slide');

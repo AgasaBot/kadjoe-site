@@ -25,6 +25,7 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
+[id]{scroll-margin-top:96px}
 html{scroll-behavior:smooth}
 body{
   background:var(--paper);
@@ -75,7 +76,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacin
 .measure{max-width:64ch}
 
 /* ---------- reveal on scroll ---------- */
-.rv{opacity:0;transform:translateY(30px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
@@ -298,6 +299,7 @@ hr.rule{border:0;height:1px;background:var(--line-soft)}
 .crumb{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--taupe)}
 .crumb a:hover{color:var(--bronze)}
 .crumb i{font-style:normal;margin:0 10px;color:var(--bronze)}
+.proj-hero .crumb i{color:rgba(255,255,255,.6)}
 
 /* ---------- portfolio ---------- */
 .filters{display:flex;gap:8px;flex-wrap:wrap;border-block:1px solid var(--line-soft);padding:16px 0;margin-bottom:clamp(40px,4vw,64px);
@@ -435,7 +437,8 @@ hr.rule{border:0;height:1px;background:var(--line-soft)}
 .faq .a{padding:0 0 28px;color:var(--taupe);max-width:70ch}
 
 /* ---------- contact ---------- */
-.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(44px,6vw,120px)}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(44px,6vw,120px);align-items:stretch}
+.contact-grid figure{min-height:480px}
 .cline{border-top:1px solid var(--line-soft);padding:26px 0;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:baseline}
 .cline .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe)}
 .cline .v{font-size:clamp(17px,1.5vw,21px)}
