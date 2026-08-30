@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agasabot.github.io/kadjoe-site/sitemap.xml
