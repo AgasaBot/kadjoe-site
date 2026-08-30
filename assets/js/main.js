@@ -94,7 +94,7 @@
     }
     function play() {
       if (t || reduceMotion) return;
-      t = setInterval(function () { show(cur + 1); }, 6400);
+      t = setInterval(function () { show(cur + 1); }, 7500);
     }
     dots.forEach(function (d, k) {
       d.addEventListener('click', function () {
