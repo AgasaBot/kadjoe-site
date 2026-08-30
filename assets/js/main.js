@@ -68,7 +68,10 @@
     var h = (location.hash || '').slice(1);
     if (!h) return;
     var t = document.getElementById(h);
-    if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' });
+    if (!t) return;
+    var y = Math.max(0, t.getBoundingClientRect().top + window.scrollY - 96);
+    try { window.scrollTo({ top: y, behavior: 'instant' }); }
+    catch (e) { window.scrollTo(0, y); }
   }
   if (location.hash) {
     setTimeout(anchorFix, 80);
