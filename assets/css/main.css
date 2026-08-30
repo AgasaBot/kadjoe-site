@@ -399,7 +399,7 @@ hr.rule{border:0;height:1px;background:var(--line-soft)}
 .dcard .plist a{border-bottom:1px solid transparent;transition:.3s}
 .dcard .plist a:hover{color:var(--bronze);border-color:var(--bronze)}
 .inhouse{background:var(--ink);color:var(--paper);padding:clamp(44px,5vw,80px);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(36px,5vw,90px);align-items:center}
-.inhouse h3{font-size:clamp(26px,2.8vw,42px)}
+.inhouse h3{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.4vw,54px);line-height:1.12}
 .inhouse h3 .it{color:var(--bronze-2)}
 .inhouse p{color:#A99E8C;margin-top:20px}
 .inhouse .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
@@ -412,8 +412,10 @@ hr.rule{border:0;height:1px;background:var(--line-soft)}
 .split figure{overflow:hidden}
 .split img{width:100%;height:100%;object-fit:cover}
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,44px)}
-.vm .cell{border:1px solid var(--line-soft);padding:clamp(30px,3.4vw,52px);background:var(--cream)}
+.vm .cell{border-top:1px solid var(--line);padding:38px 0 0}
 .vm .cell h3{font-size:24px;margin:14px 0 16px}
+.vision-quote{font-family:var(--display);font-weight:300;font-size:clamp(24px,2.5vw,38px);line-height:1.42;color:var(--ink)}
+.vision-note{font-family:var(--edit);font-style:italic;font-size:15.5px;color:var(--taupe);margin-top:22px}
 .vm .cell p,.vm .cell li{color:var(--taupe);font-size:15.5px}
 .vm .cell li{padding:9px 0;border-bottom:1px solid var(--line-soft);display:flex;gap:14px}
 .vm .cell li:last-child{border:0}
@@ -493,4 +495,48 @@ footer .col a:hover{color:var(--bronze-2);transform:translateX(4px)}
   .pn{grid-template-columns:1fr}
   .pn a.next{border-left:0;border-top:1px solid var(--line-soft);align-items:flex-start;text-align:left}
   .f-top{grid-template-columns:1fr}
+}
+
+
+/* ---------- design roll (principal studios) ---------- */
+.droll{border-top:1px solid var(--line)}
+.drow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(28px,5vw,90px);
+  padding:clamp(44px,5.5vw,80px) 0;border-bottom:1px solid var(--line-soft);align-items:center}
+.drow .rank{font-family:var(--edit);font-style:italic;font-size:16px;color:var(--taupe)}
+.drow h3{font-family:var(--display);font-weight:300;font-size:clamp(32px,3.6vw,58px);line-height:1.08;margin-top:12px;letter-spacing:.004em}
+.drow .hnd{display:inline-block;font-family:var(--edit);font-style:italic;font-size:16.5px;color:var(--bronze);margin-top:14px}
+.drow .hnd:hover{text-decoration:underline}
+.drow .np{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--taupe);margin-top:20px}
+.drow .plist{font-size:14.5px;color:var(--taupe);line-height:2.1;margin-top:12px;max-width:54ch}
+.drow .plist a{border-bottom:1px solid transparent;transition:.3s}
+.drow .plist a:hover{color:var(--bronze);border-color:rgba(128,98,47,.4)}
+.drow .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.drow .thumbs a{aspect-ratio:1;overflow:hidden;background:var(--paper-2)}
+.drow .thumbs img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.drow .thumbs a:hover img{transform:scale(1.07)}
+
+/* ---------- index of the wider circle ---------- */
+.dindex{columns:2 400px;column-gap:clamp(48px,7vw,110px)}
+.dix{break-inside:avoid;padding:26px 0;border-bottom:1px solid var(--line-soft)}
+.dix .nm{font-family:var(--serif);font-size:21px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.dix .nm .hnd{font-family:var(--edit);font-style:italic;font-size:14.5px;color:var(--bronze);white-space:nowrap}
+.dix .pj{font-size:14px;color:var(--taupe);margin-top:8px;line-height:1.9}
+.dix .pj a:hover{color:var(--bronze)}
+
+/* ---------- full-bleed image band ---------- */
+.band{position:relative;overflow:hidden}
+.band img{width:100%;height:clamp(340px,58vh,640px);object-fit:cover;display:block}
+.band figcaption{position:absolute;inset:auto 0 0 0;padding:80px 0 28px;
+  background:linear-gradient(180deg,transparent,rgba(10,8,6,.62));color:rgba(242,237,227,.88)}
+.band figcaption .in{width:min(1460px,92vw);margin-inline:auto;font-family:var(--edit);font-style:italic;font-size:16.5px}
+
+/* ---------- colophon ---------- */
+.colophon{text-align:center;max-width:58ch;margin-inline:auto;font-family:var(--edit);font-style:italic;
+  font-size:clamp(17px,1.5vw,21px);line-height:1.95;color:var(--taupe)}
+.colophon a{color:var(--bronze)}
+.colophon a:hover{text-decoration:underline}
+
+@media (max-width:900px){
+  .drow{grid-template-columns:1fr;gap:26px}
+  .dindex{columns:1}
 }
